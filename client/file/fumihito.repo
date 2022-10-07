@@ -1,0 +1,4 @@
+#fumihito's yum repository
+[fumihito]
+name=fumihito RPM packages
+baseurl=http://web:80/repos/

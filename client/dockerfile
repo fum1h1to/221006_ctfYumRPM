@@ -1,0 +1,5 @@
+FROM centos:centos7
+
+ADD ./client/file/ctfYumRPM.gpg /root/
+ADD ./client/file/fumihito.repo /etc/yum.repos.d/
+RUN rpm -import /root/ctfYumRPM.gpg

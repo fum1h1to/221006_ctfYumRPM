@@ -1,0 +1,9 @@
+FROM centos:centos7
+
+RUN yum install -y httpd
+RUN yum install -y createrepo
+RUN mkdir -p /var/www/html/repos/RPMS
+ADD ./server/file/ctfYumRPM-1.0-1.x86_64.rpm /var/www/html/repos/RPMS
+RUN createrepo /var/www/html/repos
+EXPOSE 80
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
